@@ -43,19 +43,20 @@ $(document).ready(function(){
         $("#menu > #nav").hide();
       }
     });
+  } else {
+    $(window).on('scroll', function() {
+      var topDistance = $("#nav").offset().top;
+
+      if ( ! $( "#menu-icon" ).is(":visible") && topDistance < 50 ) {
+        $("#menu-icon-tablet").show();
+        $("#top-icon-tablet").hide();
+      } else if (! $( "#menu-icon" ).is(":visible") && topDistance > 100) {
+        $("#menu-icon-tablet").hide();
+        $("#top-icon-tablet").show();
+      }
+    });
   }
 
-  $(window).on('scroll', function() {
-    var topDistance = $("#menu > #nav").offset().top;
-
-    if ( ! $( "#menu-icon" ).is(":visible") && topDistance < 50 ) {
-      $("#menu-icon-tablet").show();
-      $("#top-icon-tablet").hide();
-    } else if (! $( "#menu-icon" ).is(":visible") && topDistance > 100) {
-      $("#menu-icon-tablet").hide();
-      $("#top-icon-tablet").show();
-    }
-  });
 
   if ( $( "#footer-post" ).length ) {
     var lastScrollTop = 0;
