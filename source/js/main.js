@@ -57,6 +57,8 @@ $(document).ready(function(){
     });
   }
 
+  $('.inst').slick();
+
 
   if ( $( "#footer-post" ).length ) {
     var lastScrollTop = 0;
