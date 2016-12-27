@@ -56,9 +56,41 @@ $(document).ready(function(){
       }
     });
   }
+  // make a gallery for build instructions
 
-  $('.inst').slick();
+  if ($('.inst').length) {
+    $('.inst, .inst-nav').find('br').remove();
+    var instTextes = []
+    $('.inst-text li').each(function(item){
+      instTextes.push($(this).text())
+    })
+    console.log(instTextes)
+    var instCont = $('.instructions')
+  $('.inst').slick({
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    fade: true,
+    cssEase: 'linear',
+    asNavFor: '.inst-nav'
+  });
+  $('.inst-nav').slick({
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: '.inst',
+    dots: true,
+    centerMode: true,
+    focusOnSelect: true
+  });
+  instCont.html(instTextes[0])
 
+  $('.inst').on('afterChange', function(event, slick, currentSlide, nextSlide){
+    console.log(instTextes[currentSlide]);
+    instCont.html(instTextes[currentSlide])
+  });
+  }
 
   if ( $( "#footer-post" ).length ) {
     var lastScrollTop = 0;
