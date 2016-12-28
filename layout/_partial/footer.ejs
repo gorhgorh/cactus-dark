@@ -6,7 +6,7 @@
     <nav>
       <ul>
         <% for (var i in site.data.menu) { %>
-          <li><a href="<%- url_for(theme.nav[i]) %>"><%= i %></a></li>
+          <li><a href="<%- url_for(site.data.menu[i]) %>"><%= i %></a></li>
         <% } %>
       </ul>
     </nav>
