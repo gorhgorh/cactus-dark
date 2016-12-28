@@ -42,10 +42,6 @@ $(document).ready(function(){
       } else if ($('#menu').css('visibility') != 'hidden' && topDistance > 100) {
         $("#menu > #nav").hide();
       }
-    });
-  } else {
-    $(window).on('scroll', function() {
-      var topDistance = $("#nav").offset().top;
 
       if ( ! $( "#menu-icon" ).is(":visible") && topDistance < 50 ) {
         $("#menu-icon-tablet").show();
