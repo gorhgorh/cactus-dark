@@ -12,7 +12,8 @@
   -->
     Welcome
   </span>
-    <% site.posts.sort('date', 'asc').limit(1).each(function(post, i){ %>
+    <% site.pages.sort('date', 'asc').limit(1).each(function(post, i){ %>
+      <% console.log(site) %>
       <%- partial('_partial/post/content', { post: post, index: true, class_name: '' }) %>
     <% }); %>
 
