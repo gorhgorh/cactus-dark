@@ -60,7 +60,7 @@ $(document).ready(function(){
     $('.inst-text li').each(function(item){
       instTextes.push($(this).text())
     })
-    console.log(instTextes)
+    // console.log(instTextes)
     var instCont = $('.instructions')
   $('.inst').slick({
     infinite: false,
@@ -83,7 +83,7 @@ $(document).ready(function(){
   instCont.html(instTextes[0])
 
   $('.inst').on('afterChange', function(event, slick, currentSlide, nextSlide){
-    console.log(instTextes[currentSlide]);
+    // console.log(instTextes[currentSlide]);
     instCont.html(instTextes[currentSlide])
   });
   }
